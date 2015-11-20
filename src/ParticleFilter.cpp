@@ -112,9 +112,8 @@ void ParticleFilter::measure(const vector<int>& lasers,
 		// for each angle
 		double diff = 0;
 		const double dr = M_PI / 180;
-		double rad = laserWorld.theta - M_PI / 2 + dr;
-		for (int r = 0; r < 180; r++) {
-			rad += dr;
+		double rad = laserWorld.theta - M_PI / 2 + 0.5*dr;
+		for (int r = 0; r < 180; r+=10) {
 			// seach along line
 			int l = 0;
 			double dx = cos(rad), dy = sin(rad);
@@ -128,6 +127,7 @@ void ParticleFilter::measure(const vector<int>& lasers,
 					break;
 				}
 			}
+			rad += (dr*10);
 			// compare to measurement
 			//diff += pow(l - lasers[r], 2);  //l2
 			diff += abs(l-lasers[r]);     //l1

@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
 	filter.addParticles(INIT_PARTICLES);
 
 	// load measurment file
-	ros::Rate r(5);
+	ros::Rate r(20);
 	bool isFirst = true;
 	int measureCount=0;
 	ifstream measureFile(measureFileName);

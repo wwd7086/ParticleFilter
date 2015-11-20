@@ -55,10 +55,10 @@ private:
 	normal_distribution<double> rGauss;
 
 	// sensor param
-	double sensorVar=10000;//20000000;//30000;;
+	double sensorVar=1000;//10000;
 
 	// resample criteria
-	double minmaxThre=1000; //550
+	double minmaxThre=100;//1000;
 	double varianceThre=0.2;
 };
 
